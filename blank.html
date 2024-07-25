@@ -1,96 +1,23 @@
-<script>
-    function getComputerChoice() {
-        let number = Math.random();
-
-        if (number <= 0.33) {
-            return "Rock"
-        }
-        else if (number >= 0.66) {
-            return "Scissors"
-        }
-        else {
-            return "Paper"
-        }
-    }
-
-    function getHumanChoice() {
-        let choice = prompt("Rock, Paper, Scissors?");
-        return choice;
-    }
-
-    function playGame() {
-        let humanScore = 0;
-        let computerScore = 0;
-
-        function playRound(humanChoice, computerChoice) {
-            humanLower = humanChoice.toLowerCase();
-            humanLower = humanLower.trim()
-
-            if (humanLower == "rock" && computerChoice == "Paper") {
-                console.log('You lose! Paper beats Rock')
-                computerScore++;
-            }
-            else if (humanLower == "rock" && computerChoice == "Scissors") {
-                console.log('You win! Rock beats Scissors')
-                humanScore++;
-            }
-            else if (humanLower == "rock" && computerChoice == "Rock") {
-                console.log('Tie! Play again.')
-            }
-            else if (humanLower == "paper" && computerChoice == "Rock") {
-                console.log('You Win! Paper beats Rock')
-                humanScore++;
-            }
-            else if (humanLower == "paper" && computerChoice == "Scissors") {
-                console.log('You lose! Scissors beats Paper')
-                computerScore++;
-            }
-            else if (humanLower == "paper" && computerChoice == "Paper") {
-                console.log('You tie! Play again.')
-            }
-            else if (humanLower == "scissors" && computerChoice == "Paper") {
-                console.log('You Win! Scissors beats Paper')
-                humanScore++;
-            }
-            else if (humanLower == "scissors" && computerChoice == "Rock") {
-                console.log('You Lose! Rock beats Scissors')
-                computerScore++;
-            }
-            else if (humanLower == "scissors" && computerChoice == "Paper") {
-                console.log('You tie! Play again.')
-            }
-        }
-
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-
-        if (humanScore > computerScore) {
-            return "you won"
-        }
-        else if (humanScore < computerScore) {
-            return "you lost"
-        }
-        else {
-            return "tie game"
-        }
-    }
-
-    console.log(playGame());
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="rps.js" defer></script>
+</head>
+<body>
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
+    <div class="score">
+        <div class="score1">
+            <p>Your Score: </p>
+        </div>
+        <div class="score2">
+            <p>computer Score</p>
+        </div>
+    </div>
+</body>
+</html>
